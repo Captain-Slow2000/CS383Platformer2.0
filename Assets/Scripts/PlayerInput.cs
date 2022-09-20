@@ -24,21 +24,46 @@ public class PlayerInput : MonoBehaviour
         bool isMoving = !Mathf.Approximately(moveX, 0f);
 
         animator.SetBool(PAP.isMoving, isMoving);
+
+
+        //Doing a jump
+        bool isJumpKeyPressed = Input.GetButtonDown("Jump");
+
+
+        if (isJumpKeyPressed)
+        {
+            animator.SetTrigger(PAP.JumpTriggerName);
+        }
+        else
+        {
+            animator.ResetTrigger(PAP.JumpTriggerName);
+        }
     }
 
     void FixedUpdate()
     {
+        //Debug.Log("JUMPPPP");
         float forceX = animator.GetFloat(PAP.forceX);
+
+        float impulseY = animator.GetFloat(PAP.impulseY);
+        float impulseX = animator.GetFloat(PAP.impulseX);
 
         if (forceX != 0)
         {
             rb.AddForce(new Vector2(forceX, 0) * Time.deltaTime);
         }
-        float impulseY = animator.GetFloat(PAP.impulseY);
+        //float impulseY = animator.GetFloat(PAP.impulseY);
 
-        if (impulseY != 0)
+
+        if (impulseY != 0 || impulseX != 0)
         {
-            rb.AddForce(new Vector2(0, impulseY), ForceMode2D.Impulse);
+            float xDirectionSign = Mathf.Sign(transform.localScale.x);
+            Vector2 impulseVector = new Vector2(xDirectionSign * impulseX, impulseY);
+
+            //rb.AddForce(new Vector2(0, impulseY), ForceMode2D.Impulse);
+            rb.AddForce(impulseVector, ForceMode2D.Impulse);
+            animator.SetFloat(PAP.impulseY, 0);
+            animator.SetFloat(PAP.impulseX, 0);
         }
 
     }

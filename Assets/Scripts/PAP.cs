@@ -11,6 +11,9 @@ public class PAP : MonoBehaviour
     public const string axisXinput = "Horizontal";
     public const string forceX = "forceX";
     public const string impulseY = "impulseY";
+    public const string jumpKeyName = "Jump";
+    public const string JumpTriggerName = "Jump";
+    public const string impulseX = "impulseX";
 
 
 }
