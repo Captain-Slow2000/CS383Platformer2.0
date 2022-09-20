@@ -152,7 +152,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91833720}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &91833722
 Camera:
   m_ObjectHideFlags: 0
@@ -180,7 +180,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 100
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3148,7 +3148,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1997115525}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 10
+    OrthographicSize: 20
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -5286,7 +5286,13 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 712748235523892172}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1997115524
+--- !u!4 &1997115525 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1343522316234946185, guid: 2a637767a4a1c374ca77eb22f7ca0c64,
+    type: 3}
+  m_PrefabInstance: {fileID: 712748235523892172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1997115529
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5299,12 +5305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1997115519}
---- !u!4 &1997115525 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1343522316234946185, guid: 2a637767a4a1c374ca77eb22f7ca0c64,
-    type: 3}
-  m_PrefabInstance: {fileID: 712748235523892172}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2023521791
 GameObject:
   m_ObjectHideFlags: 0
@@ -5653,7 +5653,7 @@ PrefabInstance:
     - target: {fileID: 2419860354470165369, guid: 2a637767a4a1c374ca77eb22f7ca0c64,
         type: 3}
       propertyPath: m_GravityScale
-      value: 15
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5637423034282808717, guid: 2a637767a4a1c374ca77eb22f7ca0c64,
         type: 3}
