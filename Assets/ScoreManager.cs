@@ -25,6 +25,15 @@ public class ScoreManager : MonoBehaviour
     public void AddScore()
     {
         score += 10;
-        ScoreDisplay.text = "SCORE: " + score.ToString(); 
+        ScoreDisplay.text = "SCORE: " + score.ToString();
+
+    }
+
+    public void Update(){
+        //change transform position
+        //getPlayerposition
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        this.transform.position = new Vector2(player.transform.position.x, player.transform.position.y+75);
+        //<transform.getPlayerposition>();
     }
 }
